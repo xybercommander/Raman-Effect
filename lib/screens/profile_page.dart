@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hoohack_demo/constants/constants.dart';
 
-class MainPage extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

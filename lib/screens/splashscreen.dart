@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hoohack_demo/constants/constants.dart';
 import 'package:hoohack_demo/helper/sharedpreferences.dart';
-import 'package:hoohack_demo/screens/mainPage.dart';
+import 'package:hoohack_demo/screens/profile_page.dart';
 import 'package:hoohack_demo/screens/sign_up.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Constants.avatar = await SharedPref.getAvatarSharedPreference();
       }
       Navigator.pushReplacement(context, PageTransition(
-        child: isLoggedIn ? MainPage() : SignUp(),
+        child: isLoggedIn ? ProfilePage() : SignUp(),
         type: PageTransitionType.bottomToTop
       ));
     });
