@@ -80,6 +80,16 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,           
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Icon(Icons.arrow_back, color: Theme.of(context).primaryColor,),
+                  ),
+                ),
+              ),
               Stack(
                 alignment: Alignment.bottomRight,
                 children: [
