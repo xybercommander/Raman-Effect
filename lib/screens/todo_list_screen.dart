@@ -71,7 +71,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
             ),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => AddTaskScreen(task: task, udpateTaskList: _updateTaskList,))),            
           ),
-          Divider() // TODO remove the last divider
+          Divider()
         ],
       ),
     );
@@ -86,8 +86,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       body: FutureBuilder(
         future: _taskList,
         builder: (context, snapshot) {    
-
-          // TODO SNAPSHOT IS SHOWING NULL
+          
           if(!snapshot.hasData) {            
             return Center(
               child: CircularProgressIndicator(),

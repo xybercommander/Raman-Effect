@@ -98,13 +98,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     backgroundImage: AssetImage(Constants.avatar == 1 ? 'assets/images/boy_avatar.png' : 'assets/images/girl_avatar.png'),
                     radius: 50,
                   ),
-                  avatarRank(Constants.points)
+                  avatarRank(750)
                 ],
               ),
               SizedBox(height: 10,),
               Text(Constants.name, style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),),
               Text('Points: ${Constants.points}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              profileRank(Constants.points),
+              profileRank(750),
               SizedBox(height: 30,),
               Column(
                 children: [
