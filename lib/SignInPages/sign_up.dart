@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hoohack_demo/SignInPages/sign_in.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SignUp extends StatefulWidget {
@@ -8,10 +7,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  final _formKey = GlobalKey<FormState>();
-  TextEditingController _nameTextEditingController = TextEditingController();
-  TextEditingController _emailTextEditingController = TextEditingController();
-  TextEditingController _passwordTextEditingController = TextEditingController();
+  TextEditingController _nameTextEditingController = TextEditingController();  
 
   int avatarSelector = 0; // 1 - Boy, 2 - Girl
 
@@ -25,6 +21,12 @@ class _SignUpState extends State<SignUp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                children: [                  
+                  Image.asset('assets/images/girl.png', width: 155, height: 200,),
+                  Image.asset('assets/images/boy.png', width: 155, height: 200,),
+                ],
+              ),
               Text(
                 'Yay !\nCreate an account',
                 style: TextStyle(
@@ -92,46 +94,16 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               SizedBox(height: 30,),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    // -----------EMAIL TEXT FIELD-----------
-                    TextFormField(
-                      controller: _nameTextEditingController,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      decoration: InputDecoration(
-                        labelText: 'What should we call you?',
-                        labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    // -----------EMAIL TEXT FIELD-----------
-                    TextFormField(
-                      controller: _emailTextEditingController,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      decoration: InputDecoration(
-                        labelText: 'Email ID',
-                        labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    // -----------PASSWORD TEXT FIELD-----------
-                    TextFormField(
-                      controller: _passwordTextEditingController,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      decoration: InputDecoration(
-                        labelText: 'Password',
-                        labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))
-                      ),
-                    ),
-                  ],
+              TextFormField(
+                controller: _nameTextEditingController,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                decoration: InputDecoration(
+                  labelText: 'What should we call you?',
+                  labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))
                 ),
-              )
-            ],
+              ),
+            ],            
           ),
         ),
       )
