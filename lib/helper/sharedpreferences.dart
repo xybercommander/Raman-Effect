@@ -5,6 +5,7 @@ class SharedPref {
   static String loggedInSharedPreferenceKey = 'LOGINKEY';
   static String nameSharedPreferenceKey = 'NAMEKEY';
   static String avatarSharedPreferenceKey = 'AVATARKEY';
+  static String pointsSharedPreferenceKey = 'POINTSKEY';
 
   // ----------------SET FUNCTIONS----------------//
   static Future<void> saveLoggedInSharedPreference(bool isUserLoggedIn) async {
@@ -22,6 +23,11 @@ class SharedPref {
     return await preferences.setInt(avatarSharedPreferenceKey, avatar);
   } 
 
+  static Future<void> savePointsSharedPreference(int points) async { 
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return await preferences.setInt(pointsSharedPreferenceKey, points);
+  } 
+
 
   // ----------------GET FUNCTIONS---------------- //
   static Future<bool> getLoggedInSharedPreference() async {
@@ -37,6 +43,11 @@ class SharedPref {
   static Future<int> getAvatarSharedPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return preferences.getInt(avatarSharedPreferenceKey);
+  }
+
+  static Future<int> getPointsSharedPreference() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return preferences.getInt(pointsSharedPreferenceKey);
   }
 
 }

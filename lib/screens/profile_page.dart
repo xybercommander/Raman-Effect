@@ -5,9 +5,11 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 80),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,        
+          mainAxisAlignment: MainAxisAlignment.start,           
           children: [
             CircleAvatar(
               backgroundColor: Colors.transparent,

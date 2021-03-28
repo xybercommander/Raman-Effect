@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hoohack_demo/constants/constants.dart';
 import 'package:hoohack_demo/helper/sharedpreferences.dart';
 import 'package:hoohack_demo/screens/profile_page.dart';
+import 'package:hoohack_demo/screens/todo_list_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SignUp extends StatefulWidget {
@@ -36,7 +37,7 @@ class _SignUpState extends State<SignUp> {
     SharedPref.saveLoggedInSharedPreference(true);
 
     Navigator.pushReplacement(context, PageTransition(
-      child: ProfilePage(),
+      child: TodoListScreen(),
       type: PageTransitionType.bottomToTop
     ));
   }
@@ -54,8 +55,8 @@ class _SignUpState extends State<SignUp> {
             children: [
               Row(
                 children: [                  
-                  Image.asset('assets/images/girl.png', width: 155, height: 200,),
-                  Image.asset('assets/images/boy.png', width: 155, height: 200,),
+                  Image.asset('assets/images/girl.png', width: 155, height: 150,),
+                  Image.asset('assets/images/boy.png', width: 155, height: 150,),
                 ],
               ),
               Text(
