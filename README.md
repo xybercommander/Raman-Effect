@@ -262,7 +262,7 @@ Then add a title and description to your pull request that explains your preciou
 |🔘 Make a `quiz platform` after a task is being done|
 |🔘 **`Make a student portal like LinkedIn `** to help them find opportunities and a place to share ideas|
 |🔘 **` User friendly`** sorting and filtering based on prority task|
-|🔘 **`Build a Voice-chat option`** to find taks & exercises & quizes|
+|🔘 **`Build a Voice-chat option`** to find tasks, exercises & quizes|
 |🔘 Need a **`Teacher-Student 1-1 interaction system for doubts`** ```most important```|
 
 <i><p align="center"><a href="#content">⬆️ BACK TO CONTENT</a></p></i><br>
