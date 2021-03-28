@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hoohack_demo/constants/constants.dart';
+import 'package:hoohack_demo/helper/sharedpreferences.dart';
+import 'package:hoohack_demo/screens/mainPage.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SignUp extends StatefulWidget {
@@ -8,8 +11,36 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   TextEditingController _nameTextEditingController = TextEditingController();  
-
   int avatarSelector = 0; // 1 - Boy, 2 - Girl
+  // bool loggedIn = true;
+
+  // getLoggedInState() async {
+  //   bool temp = await SharedPref.getLoggedInSharedPreference();
+  //   setState(() {
+  //     loggedIn = temp;
+  //   });
+  //   print(loggedIn);
+  // }
+
+  @override
+  void initState() {    
+    super.initState();    
+  }
+
+
+  signUp() {
+    Constants.name = _nameTextEditingController.text;
+    Constants.avatar = avatarSelector;
+    SharedPref.saveAvatarSharedPreference(avatarSelector);
+    SharedPref.saveNameSharedPreference(_nameTextEditingController.text);
+    SharedPref.saveLoggedInSharedPreference(true);
+
+    Navigator.pushReplacement(context, PageTransition(
+      child: MainPage(),
+      type: PageTransitionType.bottomToTop
+    ));
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +134,19 @@ class _SignUpState extends State<SignUp> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))
                 ),
               ),
+              SizedBox(height: 20,),
+              Align(
+                alignment: Alignment.center,
+              // ignore: deprecated_member_use              
+                child: FlatButton(
+                  onPressed: () => signUp(),
+                  child: Text('Create', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),),
+                  color: Colors.red,
+                  shape: StadiumBorder(),
+                  minWidth: MediaQuery.of(context).size.width / 2,
+                  height: 50,
+                ),
+              )
             ],            
           ),
         ),
