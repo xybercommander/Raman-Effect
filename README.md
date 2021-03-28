@@ -89,7 +89,7 @@ You can refer to the following articles on the basics of Git and Github and also
 <br>
 
 
-## 👍 Getting Started
+## 1️⃣ Getting Started
 
 This project is a starting point for a Flutter application.
 
@@ -256,14 +256,14 @@ Then add a title and description to your pull request that explains your preciou
 
 <h2 align="center" id="FeaturesWeDemand"> :star: Features We Demand</h2>
 
-|<h2> 1️⃣ AUTOMATION : Perform Tasks In Background</h2>|
+|<h2> 1️⃣ AUTOMATION : Help Wanted</h2>|
 |---|
 |🔘To generate notifications **` build a notify system`**|
-|🔘 Make a special notification system which **`instant active for all the mermbers`**|
+|🔘 Make a `quiz platform` after a task is being done|
 |🔘 **`Make a student portal like LinkedIn `** to help them find opportunities and a place to share ideas|
 |🔘 **` User friendly`** sorting and filtering based on prority task|
-|🔘 **`Build a Voice-chat option`** to find taks & exercises|
-|🔘 Need a **`Teacher-Student 1-1 interaction system for doubts`**|
+|🔘 **`Build a Voice-chat option`** to find taks & exercises & quizes|
+|🔘 Need a **`Teacher-Student 1-1 interaction system for doubts`** ```most important```|
 
 <i><p align="center"><a href="#content">⬆️ BACK TO CONTENT</a></p></i><br>
 <br>
