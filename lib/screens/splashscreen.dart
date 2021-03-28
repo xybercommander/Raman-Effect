@@ -27,7 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {  
     getLoggedInState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 3), () async {
+      if(isLoggedIn == true) {
+        Constants.name = await SharedPref.getNameSharedPreference();
+        Constants.avatar = await SharedPref.getAvatarSharedPreference();
+      }
       Navigator.pushReplacement(context, PageTransition(
         child: isLoggedIn ? MainPage() : SignUp(),
         type: PageTransitionType.bottomToTop
