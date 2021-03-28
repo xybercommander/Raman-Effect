@@ -126,10 +126,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: TextFormField(
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         decoration: InputDecoration(
                           labelText: 'Title',
-                          labelStyle: TextStyle(fontSize: 18),
+                          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)
                           )
@@ -146,11 +146,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       child: TextFormField(
                         readOnly: true, // This disables the user to type anything in the date
                         controller: _dateController,
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         onTap: _handleDatePicker,
                         decoration: InputDecoration(
                           labelText: 'Date',
-                          labelStyle: TextStyle(fontSize: 18),
+                          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)
                           )
@@ -166,7 +166,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         icon: Icon(Icons.arrow_drop_down_circle),
                         iconSize: 22,
                         iconEnabledColor: Theme.of(context).primaryColor,
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18, fontFamily: 'Quicksand', fontWeight: FontWeight.bold),
                         items: _priorities.map((String priority) {
                           return DropdownMenuItem(
                             value: priority,
@@ -174,14 +174,16 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                               priority,
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 18
+                                fontSize: 18,
+                                fontFamily: 'Quicksand',
+                                fontWeight: FontWeight.bold
                               ),
                             ),
                           );
                         }).toList(),
                         decoration: InputDecoration(
                           labelText: widget.task == null ? 'Priority' : _priority,
-                          labelStyle: TextStyle(fontSize: 18),
+                          labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)
                           )
@@ -204,6 +206,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(30)
                       ),
+                      // ignore: deprecated_member_use
                       child: FlatButton(
                         shape: StadiumBorder(),
                         splashColor: Colors.white54,                      

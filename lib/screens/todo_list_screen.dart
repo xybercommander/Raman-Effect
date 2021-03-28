@@ -42,27 +42,34 @@ class _TodoListScreenState extends State<TodoListScreen> {
               task.title,
               style: TextStyle(
                 fontSize: 18,
-                decoration: task.status == 0 ? TextDecoration.none : TextDecoration.lineThrough
+                decoration: task.status == 0 ? TextDecoration.none : TextDecoration.lineThrough,
+                fontWeight: FontWeight.bold
               ),
             ),
             subtitle: Text(
               '${_dateFormatter.format(task.date)} • ${task.priority}',
               style: TextStyle(
                 fontSize: 15,
-                decoration: task.status == 0 ? TextDecoration.none : TextDecoration.lineThrough
+                decoration: task.status == 0 ? TextDecoration.none : TextDecoration.lineThrough,
+                fontWeight: FontWeight.bold
               ),
             ),
             trailing: Checkbox(
               onChanged: (value) {                
-                // value == true ? task.status = 1 : task.status = 0;
-                task.status = value ? 1 : 0; // same as the above statement
+                task.status = value ? 1 : 0;
                 DatabaseHelper.instance.updateTask(task);
                 _updateTaskList();
+                // -------------POINT SYSTEM IMPLEMENTATION-------------
+                if(task.status == 1) {
+                  task.date.day < DateTime.now().day ? Constants.points += 3 : Constants.points += 5; 
+                } else {
+                  task.date.day < DateTime.now().day ? Constants.points -= 3 : Constants.points -= 5; 
+                }
               },
               value: task.status == 1 ? true : false,
               activeColor: Theme.of(context).primaryColor,
             ),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => AddTaskScreen(task: task, udpateTaskList: _updateTaskList,))),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => AddTaskScreen(task: task, udpateTaskList: _updateTaskList,))),            
           ),
           Divider() // TODO remove the last divider
         ],
