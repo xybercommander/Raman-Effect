@@ -36,7 +36,7 @@ class _SignUpState extends State<SignUp> {
     SharedPref.saveLoggedInSharedPreference(true);
 
     Navigator.pushReplacement(context, PageTransition(
-      child: MainPage(),
+      child: ProfilePage(),
       type: PageTransitionType.bottomToTop
     ));
   }
